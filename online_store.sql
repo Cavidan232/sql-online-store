@@ -20,11 +20,41 @@
 -- FROM customers
 -- GROUP BY City;
 -- join ile musterilerin sifarislerini gosteren sorgu
+-- SELECT
+--     customers.first_name,
+--     customers.last_name,
+--     orders.order_id,
+--     orders.order_date
+-- FROM customers
+-- JOIN orders
+--     ON customers.customer_id = orders.customer_id;
+
+
 SELECT
+    customers.city,
     customers.first_name,
-    customers.last_name,
-    orders.order_id,
-    orders.order_date
+    customers.customer_id,
+    orders.order_id
 FROM customers
 JOIN orders
-    ON customers.customer_id = orders.customer_id;
+    ON customers.customer_id=orders.customer_id
+
+--seheri mingecevir  olanlarin verdiyi sifarisler
+
+
+-- SELECT
+--     customers.city,
+--     customers.first_name,
+--     customers.last_name,
+--     orders.order_id,
+--     orders.order_date,
+--     products.product_name
+-- FROM customers
+-- JOIN orders
+--     ON customers.customer_id=orders.customer_id
+-- JOIN order_items
+--     ON orders.order_id=orders_items.order_id
+-- JOIN products
+--     ON order_items.product_id=products.product_id
+
+-- WHERE customers.city='Mingəçevir'
